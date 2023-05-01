@@ -1,11 +1,12 @@
 import React from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
     return (
-        <div className='container w-full mx-auto text-center mt-4'>
-            <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Login</h2>
+        <div className='container w-full mx-auto text-center mt-8'>
+            <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Please Login</h2>
             <div className='w-[50%] h-[60vh] mt-5 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
                 <form>
                     <div className="mb-4">
@@ -43,6 +44,9 @@ const Login = () => {
                         >
                             Login
                         </button>
+                    </div>
+                    <div>
+                        <p><small>Already have an account? <Link to="/register"><span className='text-red-500'>Register</span></Link></small></p>
                     </div>
                 </form>
                 <div className='w-full mt-5 space-y-2'>

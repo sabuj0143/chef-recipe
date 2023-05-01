@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             <div className=''>
                 <Link to='/login'>
-                    <button className='bg-indigo-500 text-white p-2 rounded-md'>Login</button>
+                    <button className='bg-gray-100 text-black py-2 px-4 rounded-md'>Login</button>
                 </Link>
             </div>
         </div>

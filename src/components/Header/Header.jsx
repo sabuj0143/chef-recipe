@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
+    
     return (
         <div className='container w-full mx-auto mt-2 bg-gray-400 rounded p-2 flex items-center justify-around font-semibold text-xl'>
             <div className="company-name">

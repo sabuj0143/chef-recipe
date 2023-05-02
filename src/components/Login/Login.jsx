@@ -7,7 +7,7 @@ const Login = () => {
     return (
         <div className='container w-full mx-auto text-center mt-8'>
             <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Please Login</h2>
-            <div className='w-[50%] h-[60vh] mt-5 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+            <div className='w-[50%] h-[70vh] mt-5 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
                 <form>
                     <div className="mb-4">
                         <label
@@ -45,15 +45,15 @@ const Login = () => {
                             Login
                         </button>
                     </div>
-                    <div>
-                        <p><small>Already have an account? <Link to="/register"><span className='text-red-500'>Register</span></Link></small></p>
+                    <div className='mt-2'>
+                        <p><small>Don't Have An Account? <Link to="/register"><span className='text-red-500'>Register</span></Link></small></p>
                     </div>
                 </form>
                 <div className='w-full mt-5 space-y-2'>
-                    <div>
+                    <div className='mx-16'>
                         <button className='btn btn-secondary w-full'><FaGithub /><span className='ml-2'>Github</span></button>
                     </div>
-                    <div>
+                    <div className='mx-16'>
                         <button className='btn btn-secondary w-full'><FaGoogle /> <span className='ml-2'>Google</span></button>
                     </div>
                 </div>

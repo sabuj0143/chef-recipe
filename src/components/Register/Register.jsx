@@ -72,7 +72,7 @@ const Register = () => {
                 <form onSubmit={handleSignUp}>
                     <div className="mb-4">
                         <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
+                            className="block text-start text-gray-700 text-sm font-bold mb-2"
                             htmlFor="name"
                         >
                             Name
@@ -88,7 +88,7 @@ const Register = () => {
                     </div>
                     <div className="mb-4">
                         <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
+                            className="block text-start text-gray-700 text-sm font-bold mb-2"
                             htmlFor="photo"
                         >
                             Photo URL
@@ -104,7 +104,7 @@ const Register = () => {
                     </div>
                     <div className="mb-4">
                         <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
+                            className="block text-start text-gray-700 text-sm font-bold mb-2"
                             htmlFor="email"
                         >
                             Email
@@ -120,7 +120,7 @@ const Register = () => {
                     </div>
                     <div className="mb-6">
                         <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
+                            className="block text-start text-gray-700 text-sm font-bold mb-2"
                             htmlFor="password"
                         >
                             Password

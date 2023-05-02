@@ -21,7 +21,7 @@ const SingleChef = ({ chef }) => {
                         <div className='font-semibold text-xl'>Likes : {likes}</div>
                     </div>
                     <div className="card-actions justify-start">
-                        <Link to={`details/${id}`}>
+                        <Link to={`/details/${id}`}>
                             <button className="btn btn-primary font-semibold mt-2">View Recipes</button>
                         </Link>
                     </div>

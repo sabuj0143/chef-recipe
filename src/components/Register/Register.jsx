@@ -19,8 +19,9 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password);
 
+        setError('');
         // validate if elseif using to password condition.
-        if (!/(?=.*[A-Z])/.test(password)) {
+        if(!/(?=.*[A-Z])/.test(password)) {
             setError('places One Uppercase add him.');
             return;
         }

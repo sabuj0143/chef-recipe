@@ -1,11 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState('');
     const [user, setUser] = useState(null);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/chefs';
+
+
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const handleLoginUser = (event) => {
@@ -14,7 +20,7 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         setError('');
         // validate if elseif using to password condition.
@@ -34,9 +40,9 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 setUser(loggedUser)
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 form.reset();
-                // navigate(location.state.pathname || "/")
+                navigate(location.state?.pathname || "/")
             })
             .catch(error => {
                 setError(error.massage)
@@ -60,7 +66,7 @@ const Login = () => {
                 setUser(loggedUser)
             })
             .catch(error => {
-                console.log(error);
+                setError(error);
             })
     }
     return (

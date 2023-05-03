@@ -1,8 +1,9 @@
 import React from 'react';
+import user from '../../../public/louis-hansel-v3OlBE6-fhU-unsplash.jpg'
 
 const PageViews = () => {
     return (
-        <div>
+        <div className='w-[50%] mx-auto h-[30vh] items-center'>
             <div className="stats shadow">
 
                 <div className="stat">
@@ -27,7 +28,7 @@ const PageViews = () => {
                     <div className="stat-figure text-secondary">
                         <div className="avatar online">
                             <div className="w-16 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img src={user} />
                             </div>
                         </div>
                     </div>

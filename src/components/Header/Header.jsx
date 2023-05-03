@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <div className='w-full mx-auto text-center items-center rounded p-6  md:flex justify-around font-semibold text-xl'>
             <div className="company-name">
-                <h2>Food-Network</h2>
+                <h2>Food-<span className='text-red-600'>Network</span></h2>
             </div>
             <div className="nav-list space-x-2">
                 <ActiveLink to="/">Home</ActiveLink>
@@ -23,13 +23,13 @@ const Header = () => {
             <div>
                 {
                     user ?
-                        <div className='flex items-center gap-3'>
+                        <div className='items-center gap-3 md:flex '>
                             <div className="tooltip" data-tip={user?.displayName}>
                                 <img className='w-[50px] h-[50px] rounded-full' src={user?.photoURL} alt="" />
                             </div>
-                            <button onClick={handleLogOut} className='bg-gray-400 text-black py-2 px-4 rounded-md'>Sign Out</button>
+                            <button onClick={handleLogOut} className='btn btn-primary text-black py-2 px-4 rounded-md'>Sign Out</button>
 
-                        </div> : <Link to='/login'><button className='bg-gray-400 text-black py-2 px-4 rounded-md'>Login</button></Link>
+                        </div> : <Link to='/login'><button className='btn btn-primary text-black py-2 px-4 rounded-md'>Login</button></Link>
                 }
             </div>
         </div>

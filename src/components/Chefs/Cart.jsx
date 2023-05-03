@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Cart = ({ res }) => {
-    const resData = res;
-    console.log(resData);
     const { name, rating, recipesImage, cookingMethod, ingredients } = res;
 
     return (
@@ -29,10 +27,6 @@ const Cart = ({ res }) => {
                     </div>
                     <hr className='my-2' />
                     <p>{cookingMethod}</p>
-
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Favorite</button>
-                    </div>
                 </div>
             </div>
         </div>

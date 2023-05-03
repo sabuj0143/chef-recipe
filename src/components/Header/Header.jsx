@@ -23,8 +23,10 @@ const Header = () => {
                 {
                     user ?
                         <>
-                         <span>{user?.email}</span>
-                         <button onClick={handleLogOut} className='bg-gray-400 text-black mr-4 py-2 px-4 rounded-md'>Sign Out</button>
+                            <div className="tooltip" data-tip={user?.email}>
+                                <span>{user?.email}</span>
+                            </div>
+                            <button onClick={handleLogOut} className='bg-gray-400 text-black mr-4 py-2 px-4 rounded-md'>Sign Out</button>
 
                         </> : <Link to='/login'><button className='bg-gray-400 text-black py-2 px-4 rounded-md'>Login</button></Link>
                 }

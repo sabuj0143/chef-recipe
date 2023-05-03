@@ -1,18 +1,23 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Cart from '../Chefs/Cart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefRecipes = () => {
     const { id } = useParams();
     const allRecipes = useLoaderData();
     const singleRecipes = allRecipes.find(recipe => recipe.id === id);
-    console.log(singleRecipes);
     const { name, image, bio, numRecipes, yearsExperience, likes } = singleRecipes;
+
+    const handleToast = () => {
+        toast('Favorite')
+    }
 
     return (
         <>
-            <div className="card w-[40%] mx-auto my-6 bg-base-100 shadow-xl">
-                <figure><img className='w-[450px] h-[400px]' src={image} alt="Shoes" /></figure>
+            <div className="card w-[40%] h-[90vh] mx-auto my-6 bg-base-100 shadow-xl">
+                <figure><img className='w-full h-[40vh]' src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <hr />
                     <h2 className="card-title">
@@ -24,7 +29,8 @@ const ChefRecipes = () => {
                     <p className='text-sm'> <span className='font-semibold text-xl'>Years Of Experience : </span>  {yearsExperience}</p>
                     <p className='text-sm'> <span className='font-semibold text-xl'> Likes : </span> {likes}</p>
                     <div className="card-actions justify-end">
-
+                        <button onClick={handleToast} className="btn btn-primary">Favorite</button>
+                        <ToastContainer />
                     </div>
                     <hr />
                 </div>

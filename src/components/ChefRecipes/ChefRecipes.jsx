@@ -11,7 +11,7 @@ const ChefRecipes = () => {
     const { name, image, bio, numRecipes, yearsExperience, likes } = singleRecipes;
 
     const handleToast = () => {
-        toast('Favorite')
+        toast('SuccessFully  Favorite')
     }
 
     return (

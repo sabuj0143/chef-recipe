@@ -9,7 +9,8 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/chefs';
+    const from = location.state?.from?.pathname || '/';
+    console.log(from);
 
 
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
@@ -40,9 +41,9 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 setUser(loggedUser)
-                // console.log(loggedUser);
+                console.log(loggedUser);
                 form.reset();
-                navigate(location.state?.pathname || "/")
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 setError(error.massage)
@@ -71,8 +72,12 @@ const Login = () => {
     }
     return (
         <div className='container w-full mx-auto text-center mt-8'>
-            <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Please Login</h2>
-            <div className='w-[50%] h-[70vh] mt-5 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+
+            <div className='w-[50%] h-[80vh] mt-5 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-12'>
+                <div>
+                    <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Please Login</h2>
+                    <hr className='my-2 w-[60%] mx-auto' />
+                </div>
                 <form onSubmit={handleLoginUser}>
                     <div className="mb-4">
                         <label
@@ -118,10 +123,10 @@ const Login = () => {
                 </form>
                 <div className='w-full mt-5 space-y-2'>
                     <div className='mx-16'>
-                        <button onClick={handleSignInGoogle} className='btn btn-secondary w-full'><FaGithub /><span className='ml-2'>Github</span></button>
+                        <button onClick={handleSignInGoogle} className='btn btn-secondary w-full'><FaGithub /><span className='ml-2'>Google</span></button>
                     </div>
                     <div className='mx-16'>
-                        <button onClick={handleSignInGithub} className='btn btn-secondary w-full'><FaGoogle /> <span className='ml-2'>Google</span></button>
+                        <button onClick={handleSignInGithub} className='btn btn-secondary w-full'><FaGoogle /> <span className='ml-2'></span>Github</button>
                     </div>
                 </div>
             </div>

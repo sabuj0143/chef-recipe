@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
@@ -21,7 +22,7 @@ const Register = () => {
 
         setError('');
         // validate if elseif using to password condition.
-        if(!/(?=.*[A-Z])/.test(password)) {
+        if (!/(?=.*[A-Z])/.test(password)) {
             setError('places One Uppercase add him.');
             return;
         }
@@ -37,6 +38,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser);
+                updateName(loggedUser, name, photo)
                 form.reset();
             })
             .catch(error => {
@@ -44,6 +46,22 @@ const Register = () => {
                 setError(error.massage)
             })
     };
+
+    const updateName = (user, name, profile) => {
+        updateProfile(user, {
+            displayName: name,
+            photoURL: profile
+        })
+            .then(() => {
+                console.log('Photo and name ');
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+
+
+    };
+
     const handleSignInGoogle = () => {
         signInWithGoogle()
             .then(result => {
@@ -67,8 +85,12 @@ const Register = () => {
 
     return (
         <div className='container w-full mx-auto text-center mt-8'>
-            <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Please Register</h2>
+
             <div className='w-[50%] h-[100vh] mt-5 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+                <div>
+                    <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Please Register</h2>
+                    <hr className='my-2 w-[60%] mx-auto' />
+                </div>
                 <form onSubmit={handleSignUp}>
                     <div className="mb-4">
                         <label

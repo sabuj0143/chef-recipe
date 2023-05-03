@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import Chefs from '../Chefs/Chefs';
 import CarouselImg from './CarouselImg';
+import PageViews from './PageViews';
 
 const Home = () => {
     return (
@@ -12,6 +13,8 @@ const Home = () => {
             <CarouselImg></CarouselImg>
             <hr className='my-4' />
             <Chefs></Chefs>
+            <hr className='my-4' />
+            <PageViews></PageViews>
         </div>
     );
 };

@@ -6,8 +6,9 @@ const Chefs = () => {
     const allChefs = useLoaderData();
     return (
         <>
-            <div className='text-center text-red-400'>
-                <h2 className='font-semibold text-4xl'>Our Chefs</h2>
+            <div className='text-center px-2'>
+                <h2 className='font-semibold text-4xl'>Chefs Blog</h2>
+                <p className='mt-4 text-xl font-normal'>Different types of food can provide different <br /> nutrients that the body needs...</p>
             </div>
             <div className='container w-[80%] mx-auto my-6 space-y-6 md:grid grid-cols-2'>
                 {

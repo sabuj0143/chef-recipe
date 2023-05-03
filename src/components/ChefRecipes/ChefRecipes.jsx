@@ -13,9 +13,11 @@ const ChefRecipes = () => {
             <div className="card w-[40%] mx-auto my-6 bg-base-100 shadow-xl">
                 <figure><img className='w-[450px] h-[400px]' src={image} alt="Shoes" /></figure>
                 <div className="card-body">
+                    <hr />
                     <h2 className="card-title">
-                        <span className='font-semibold text-xl'>{name}</span>
+                        <span className='font-semibold text-2xl'>{name}</span>
                     </h2>
+                    <hr />
                     <p className='text-sm'> <span className='font-semibold text-xl'>Description : </span>  {bio}</p>
                     <p className='text-sm'> <span className='font-semibold text-xl'>Number Of Recipes : </span>  {numRecipes}</p>
                     <p className='text-sm'> <span className='font-semibold text-xl'>Years Of Experience : </span>  {yearsExperience}</p>
@@ -23,6 +25,7 @@ const ChefRecipes = () => {
                     <div className="card-actions justify-end">
 
                     </div>
+                    <hr />
                 </div>
             </div>
         </>

@@ -11,7 +11,7 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='container w-full mx-auto mt-2 bg-base-200 rounded p-2 flex items-center justify-around font-semibold text-xl'>
+        <div className='container w-full mx-auto mt-2 bg-base-200 rounded p-2 md:flex items-center justify-around font-semibold text-xl'>
             <div className="company-name">
                 <h2>Food-Network</h2>
             </div>

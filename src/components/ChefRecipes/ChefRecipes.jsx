@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import Cart from '../Chefs/Cart';
 
 const ChefRecipes = () => {
     const { id } = useParams();
@@ -27,6 +28,11 @@ const ChefRecipes = () => {
                     </div>
                     <hr />
                 </div>
+            </div>
+            <div className='md:grid grid-cols-3 my-4'>
+                {
+                    singleRecipes.recipes.map(res => <Cart key={res} res={res}></Cart>)
+                }
             </div>
         </>
     );

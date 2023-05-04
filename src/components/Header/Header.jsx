@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import ActiveLink from '../ActiveLink/ActiveLink';
-import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);

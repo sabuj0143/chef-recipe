@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Typewriter from "typewriter-effect";
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -43,7 +44,7 @@ const Login = () => {
                 setUser(loggedUser)
                 console.log(loggedUser);
                 form.reset();
-                navigate(from, {replace: true})
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.massage)
@@ -75,7 +76,18 @@ const Login = () => {
 
             <div className='w-[50%] h-[80vh] mt-5 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-12'>
                 <div>
-                    <h2 className='text-gray-700 font-bold mb-2 text-2xl'>Please Login</h2>
+                    <h2 className='text-gray-700 font-bold mb-2 text-2xl'>
+                        <Typewriter
+                                options={{
+                                strings: ["Please Login"],
+                                autoStart: true,
+                                loop: true,
+                                delay: 80,
+                                cursor: "_",
+                                deleteSpeed: 20,
+                            }}
+                        />
+                    </h2>
                     <hr className='my-2 w-[60%] mx-auto' />
                 </div>
                 <form onSubmit={handleLoginUser}>

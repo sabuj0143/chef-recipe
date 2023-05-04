@@ -18,32 +18,28 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password);
 
         setError('');
         // validate if elseif using to password condition.
-        if (!/(?=.*[A-Z])/.test(password)) {
-            setError('places One Uppercase add him.');
+        if(password > 6){
+            setError('Places Enter most be 6 character')
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            setError('Places Enter One Uppercase.');
             return;
         }
         else if (!/(?=.*[!@#$%^&*])/.test(password)) {
-            setError('Assert a string has at least one special character');
-            return;
-        }
-        else if (!/(?=.*[0-9])/.test(password)) {
-            setError('Assert a string has at least one number');
+            setError('Assert a string has at least One Special Character');
             return;
         }
         createUser(email, password)
             .then(result => {
-                const loggedUser = result.user
-                console.log(loggedUser);
+                const loggedUser = result.user;
                 updateName(loggedUser, name, photo)
                 form.reset();
             })
             .catch(error => {
-                console.log(error);
-                setError(error.massage)
+                setError(error.message)
             })
     };
 

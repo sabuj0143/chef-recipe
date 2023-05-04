@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Cart from '../Chefs/Cart';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const ChefRecipes = () => {
 
-    const [buttonDisabled, setButtonDisabled] = useState(false);
+    // const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const { id } = useParams();
     const allRecipes = useLoaderData();
     const singleRecipes = allRecipes.find(recipe => recipe.id === id);
     const { name, image, bio, numRecipes, yearsExperience, likes } = singleRecipes;
 
-    const handleToast = () => {
-        toast('Successfully Favorited');
-        setButtonDisabled(true);
-    }
+    // const handleToast = () => {
+    //     toast('Successfully Favorited');
+    //     setButtonDisabled(true);
+    // }
 
     return (
         <>
@@ -32,11 +32,11 @@ const ChefRecipes = () => {
                     <p className='text-sm'> <span className='font-semibold text-xl'>Number Of Recipes : </span>  {numRecipes}</p>
                     <p className='text-sm'> <span className='font-semibold text-xl'>Years Of Experience : </span>  {yearsExperience}</p>
                     <p className='text-sm'> <span className='font-semibold text-xl'> Likes : </span> {likes}</p>
-                    <div className="card-actions justify-end">
+                    {/* <div className="card-actions justify-end">
                         <button onClick={handleToast} disabled={buttonDisabled} className="btn btn-primary">Favorite</button>
                         <ToastContainer />
                     </div>
-                    <hr />
+                    <hr /> */}
                 </div>
             </div>
             <div className='md:grid grid-cols-3 my-4'>

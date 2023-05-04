@@ -11,7 +11,6 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    console.log(from);
 
 
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
@@ -22,27 +21,27 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(email, password);
 
         setError('');
         // validate if elseif using to password condition.
-        if (!/(?=.*[A-Z])/.test(password)) {
-            setError('places One Uppercase add him.');
+        if (!password === password) {
+            setError('Enter your the correct Password')
+        }
+        else if (password > 6) {
+            setError('Places Enter most be 6 character')
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            setError('Places Enter One Uppercase.');
             return;
         }
         else if (!/(?=.*[!@#$%^&*])/.test(password)) {
-            setError('Assert a string has at least one special character');
+            setError('Assert a string has at least One Special Character');
             return;
         }
-        else if (!/(?=.*[0-9])/.test(password)) {
-            setError('Assert a string has at least one number');
-            return;
-        };
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user
                 setUser(loggedUser)
-                console.log(loggedUser);
                 form.reset();
                 navigate(from, { replace: true })
             })
@@ -78,7 +77,7 @@ const Login = () => {
                 <div>
                     <h2 className='text-gray-700 font-bold mb-2 text-2xl'>
                         <Typewriter
-                                options={{
+                            options={{
                                 strings: ["Please Login"],
                                 autoStart: true,
                                 loop: true,

@@ -3,7 +3,7 @@ import user from '../../../public/louis-hansel-v3OlBE6-fhU-unsplash.jpg'
 
 const PageViews = () => {
     return (
-        <div className='w-[50%] mx-auto h-[30vh] items-center'>
+        <div className='w-[50%] mx-auto h-[25vh] mt-8 items-center'>
             <div className="stats shadow">
 
                 <div className="stat">

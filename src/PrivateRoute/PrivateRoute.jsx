@@ -8,9 +8,11 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <div>
-            <FadeLoader color="#36d7b7" />
-        </div>
+        return <>
+            <div className='w-[500%] text-center items-center justify-center'>
+                <FadeLoader color="#36d7b7" />
+            </div>
+        </>
     }
 
     if (user) {

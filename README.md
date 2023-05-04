@@ -17,4 +17,4 @@ To install the project dependencies, run the following command in your terminal:
 
 Create a Food-Network website.
 
-## link: https://amazing-chaja-98572c.netlify.app/statistic
+## link: https://food-network-8593b.web.app/
